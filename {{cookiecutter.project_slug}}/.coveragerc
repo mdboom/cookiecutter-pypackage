@@ -1,0 +1,2 @@
+[run]
+include={{ cookiecutter.project_slug }}/*

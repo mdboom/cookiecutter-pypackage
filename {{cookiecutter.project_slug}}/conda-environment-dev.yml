@@ -1,0 +1,12 @@
+name: {{ cookiecutter.project_slug }}
+dependencies:
+- coverage
+- flake8
+- python=3.5
+- pytest
+- pytest-cov
+- numpy
+- sphinx
+- pip:
+  - bumpversion
+  - tox

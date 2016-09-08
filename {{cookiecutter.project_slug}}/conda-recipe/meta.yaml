@@ -1,0 +1,33 @@
+package:
+  name: {{ cookiecutter.project_slug }}
+  {% raw %}
+  version: {{ load_setup_py_data().version }}
+  {% endraw %}
+
+source:
+  path: ..
+
+requirements:
+  build:
+    - python >=3.5
+
+  run:
+    - numpy
+
+test:
+  source_files:
+    - {{ cookiecutter.project_slug }}
+    - tests
+
+  requires:
+    - coverage
+    - flake8
+    - pytest
+    - pytest-cov
+
+  commands:
+    - py.test
+
+about:
+  summary:
+    {{ cookiecutter.project_short_description }}
