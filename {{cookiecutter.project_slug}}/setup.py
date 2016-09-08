@@ -13,11 +13,13 @@ requirements = [
     {%- if cookiecutter.command_line_interface|lower == 'click' %}
     'Click>=6.0',
     {%- endif %}
-    # TODO: put package requirements here
+    'numpy'
 ]
 
 test_requirements = [
-    # TODO: put package test requirements here
+    'pytest',
+    'pytest-cov',
+    'coverage'
 ]
 
 {%- set license_classifiers = {
