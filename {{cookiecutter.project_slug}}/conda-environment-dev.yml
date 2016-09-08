@@ -9,4 +9,3 @@ dependencies:
 - sphinx
 - pip:
   - bumpversion
-  - tox
