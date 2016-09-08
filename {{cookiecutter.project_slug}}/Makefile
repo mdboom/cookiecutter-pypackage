@@ -43,7 +43,6 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '__pycache__' -exec rm -fr {} +
 
 clean-test: ## remove test and coverage artifacts
-	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
 
@@ -57,12 +56,9 @@ test: ## run tests quickly with the default Python
 		python setup.py test
 	{%- endif %}
 
-test-all: ## run tests on every Python version with tox
-	tox
-
 coverage: ## check code coverage quickly with the default Python
 	{% if cookiecutter.use_pytest == 'y' -%}
-		coverage run --source {{ cookiecutter.project_slug }} py.test
+		py.test --cov
 	{% else %}
 		coverage run --source {{ cookiecutter.project_slug }} setup.py test
 	{% endif %}
