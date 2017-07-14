@@ -19,6 +19,26 @@ test_requirements = [
     'coverage'
 ]
 
+
+extensions = []
+
+
+# try:
+#     from Cython.Build import cythonize
+# except ImportError:
+#     pass
+# else:
+#     extensions = cythonize([
+#         Extension(
+#             "{{ cookiecutter.project_slug }}.cython",
+#             [
+#                 "{{ cookiecutter.project_slug }}/cython.pyx"
+#             ],
+#             include_dirs=['{{ cookiecutter.project_slug }}']
+#         )
+#     ])
+
+
 {%- set license_classifiers = {
     'MIT license': 'License :: OSI Approved :: MIT License',
     'BSD license': 'License :: OSI Approved :: BSD License',
@@ -58,5 +78,6 @@ setup(
     ],
     test_suite='tests',
     tests_require=test_requirements,
-    scripts=['scripts/{{ cookiecutter.project_slug }}']
+    scripts=['scripts/{{ cookiecutter.project_slug }}'],
+    extensions=extensions
 )
